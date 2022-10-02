@@ -18,15 +18,20 @@ function formatTime() {
 }
 function showWeatherDetails(response) {
   document.querySelector("#city").innerHTML = response.data.name;
-  document.querySelector("#temperature").innerHTML = Math.round(
-    response.data.main.temp
-  );
+  celsTemp = response.data.main.temp;
+  document.querySelector("#temperature").innerHTML = Math.round(celsTemp);
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
   document.querySelector("#description").innerHTML =
     response.data.weather[0].description;
+  icon.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  icon.setAttribute("alt", response.data.weather[0].description);
+  document.querySelector("#date").innerHTML = formatTime(response.data.dt);
 }
 
 function searchCity(city) {
@@ -34,6 +39,7 @@ function searchCity(city) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showWeatherDetails);
 }
+
 function handleSubmit(event) {
   event.preventDefault();
   let city = document.querySelector("#inputCity").value;
@@ -53,14 +59,28 @@ function getCurrentLocation(event) {
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
 
-let now = new Date();
-let currentDate = document.querySelector("#date");
-currentDate.innerHTML = formatTime(now);
-
 let searchForm = document.querySelector("#searchForm");
 searchForm.addEventListener("submit", handleSubmit);
-
 let currentLocButton = document.querySelector("#currentButton");
 currentLocButton.addEventListener("click", getCurrentLocation);
+
+let celsTemp = null;
+
+function displayInFahrenheit(event) {
+  event.preventDefault();
+  let farTemp = (celsTemp * 9) / 5 + 32;
+  document.querySelector("#temperature").innerHTML = Math.round(farTemp);
+}
+
+function displayInCelsius(event) {
+  event.preventDefault();
+  document.querySelector("#temperature").innerHTML = Math.round(celsTemp);
+}
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+let celsiusLink = document.querySelector("#celsius-link");
+
+fahrenheitLink.addEventListener("click", displayInFahrenheit);
+celsiusLink.addEventListener("click", displayInCelsius);
 
 searchCity("Kharkiv");
