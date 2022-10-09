@@ -16,79 +16,81 @@
   </head>
   <body>
     <div class="container">
-        <div class="card">
-            <div class="card-body"> 
-     <form id = "searchForm">
-          <div class="input-group mb-3">
-         <input type="search" class="form-control shadow-sm"
-              id = "inputCity"
-              placeholder="Enter your city..."
-              autofocus="on"
-              autocomplete="off">
-              <button class="btn btn-success shadow" id="searchButton" type="submit"> Search </button>
+      <div class="card">
+        <div class="card-body">
+          <form id="searchForm">
+            <div class="input-group mb-3">
+              <input
+                type="search"
+                class="form-control shadow-sm"
+                id="inputCity"
+                placeholder="Enter your city..."
+                autofocus="on"
+                autocomplete="off"
+              />
+              <button
+                class="btn btn-success shadow"
+                id="searchButton"
+                type="submit"
+              >
+                Search
+              </button>
             </div>
-     </form>
-          <button class="btn btn-success shadow" id="currentButton" type="click"> Current </button>    
-     <table class="table table-borderless">
-          <thead>
+          </form>
+          <button
+            class="btn btn-success shadow"
+            id="currentButton"
+            type="click"
+          >
+            Current
+          </button>
+          <table class="table table-borderless">
+            <thead>
+              <th><h1 id="city">Kharkiv</h1></th>
+              <th scope="col">
+                <span class="Temperature" id="temperature"></span>
+                <span class="tempUnits">
+                  <a href="#" id="celsius-link">°C</a> |<a
+                    href="#"
+                    id="fahrenheit-link"
+                    >°F</a
+                  >
+                </span>
+              </th>
+            </thead>
             <tr>
-              <th scope="col"><h1 id = "city">Kharkiv</h1></th>
-              <th scope="col"><span class="Temperature" id="temperature"></span> 
-                  <span class ="tempUnits">
-                <a href="#" id="celsius-link">°C</a> |<a href="#" id="fahrenheit-link">°F</a>
-                  </span>
+              <td><h2 id="date"></h2></td>
             </tr>
-          </thead>
             <tr>
-              <td><h2 id ="date"></h2></td>
-             
-           </tr>
+              <td>
+                <h4>Humidity: <span id="humidity">0</span>%</h4>
+              </td>
+              <td>
+                <h4><img id="icon" src="" alt="cloud" /></h4>
+              </td>
+            </tr>
+
             <tr>
-              <td><h4><span id="description"></span></h4> </td>
-              <td><h4>Humidity: <span id="humidity">0</span>%</h4></td>
-           <tr>  
-            <td><h4><img id="icon" src="" alt="cloud"></span></h4> </td>
-            <td><h4>Wind: <span id="wind">10</span>km/h</h4></td>
-           </tr>
-      <table class="table table-borderless forecast">
-        <thead>
-          <tr>
-            <th scope="col">Mon</th>
-            <th scope="col">Tue</th>
-            <th scope="col">Wen</th>
-            <th scope="col">Thu</th>
-            <th scope="col">Fri</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>23°C</td>
-            <td>24°C</td>
-            <td>26°C</td>
-            <td>28°C</td>
-            <td>29°C</td>
-          </tr>
-          <tr>
-            <td><img src="images/Cloud.png" alt="cloud" /></td>
-            <td><img src="images/Sun.png" alt="sun" /></td>
-            <td><img src="images/Sun.png" alt="sun" /></td>
-            <td><img src="images/Sun.png" alt="sun" /></td>
-            <td><img src="images/Sun.png" alt="sun" /></td>
-          </tr>
-          <tr>
-            <td>30%</td>
-            <td>10%</td>
-            <td>10%</td>
-            <td>5%</td>
-            <td>0%</td>
-          </tr>
-        </tbody>
-        </table>
+              <td>
+                <h4>Wind: <span id="wind">10</span> km/h </h4> </br>
+              </td>
+              <td>
+                <h4><span id="description"></span></h4> </br>
+              </td>
+            </tr>
+          </table>
+          <div class="weather-forecast" id="forecast"></div>
         </div>
+      </div>
+      Was coded by <a href="mailto:elen.burma@gmail.com">Olena Burma</a> and is
+      <a href="https://github.com/Hellenbur/App-project" target="_blank"
+        >open-sourced on GitHub</a
+      >
+      and
+      <a href="https://funny-profiterole-92885d.netlify.app" target="_blank"
+        >hosted on Netlify</a
+      >
     </div>
-    Was coded by <a href="mailto:elen.burma@gmail.com" target>Olena Burma</a> and is <a href="https://github.com/Hellenbur/App-project" target = "_blank">open-sourced on GitHub</a>
-     and <a href="https://funny-profiterole-92885d.netlify.app" target = "_blank">hosted on Netlify</a>
-   </div>
- <script src="src/index.js"></script> 
-</body>
+    <script src="src/index.js"></script>
+  </body>
 </html>
