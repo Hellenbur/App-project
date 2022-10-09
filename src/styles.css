@@ -3,23 +3,29 @@
   max-width: 800px;
   margin: 30px auto;
   padding: 30px;
-  background-color: white;
   font-family: Roboto, "Segoe UI", Tahoma, sans-serif;
 }
 h1 {
-  color: darkblue;
+  color: darkcyan;
   font-weight: bold;
-  font-size: 48px;
+  font-size: 58px;
   padding-bottom: 4px;
   margin-top: 30px;
 }
 h2 {
-  font-size: 36px;
+  font-size: 34px;
   font-weight: bold;
+  color: #4b3939;
+}
+h4 {
+  font-weight: 700;
+  color: #4b3939;
 }
 img {
   width: 50px;
   margin: 0 auto;
+  background-color: rgb(173, 221, 221);
+  border-radius: 5pt;
 }
 form {
   padding-top: 20px;
@@ -34,15 +40,10 @@ form {
 .table {
   text-align: center;
   margin: 0 auto;
-  color: #232323;
   font-weight: bold;
-  vertical-align: middle;
+  vertical-align: bottom;
 }
-.forecast {
-  font-size: 22px;
-  font-weight: bold;
-  color: #232323;
-}
+
 .card {
   background-color: azure;
   border-color: turquoise;
@@ -53,27 +54,28 @@ form {
 }
 .Temperature {
   position: relative;
-  color: darkblue;
+  color: darkcyan;
   font-weight: bold;
-  font-size: 60px;
+  font-size: 64px;
+  vertical-align: sub;
 }
 .tempUnits {
   position: relative;
   font-weight: 450;
   font-size: 44px;
-  color: darkblue;
-  top: -8px;
+  color: darkcyan;
+  vertical-align: super;
 }
 #celsius-link,
 #fahrenheit-link {
   text-decoration: none;
-  color: darkblue;
+  color: darkcyan;
 }
 #searchButton {
   margin-left: 420px;
   border-radius: 6pt;
   font-size: 20px;
-  background-color: darkblue;
+  background-color: rgb(115, 115, 175);
   position: absolute;
 }
 #inputCity {
@@ -95,7 +97,18 @@ form {
   text-transform: capitalize;
 }
 #icon {
-  width: 70px;
-  background-color: rgb(124, 181, 181);
+  width: 74px;
+  background-color: rgb(173, 221, 221);
   border-radius: 5pt;
+}
+.weather-forecast-date,
+.weather-forecast-temperatures {
+  font-size: larger;
+  font-weight: bold;
+}
+.weather-forecast-temperatures {
+  color: coral;
+}
+.weather-forecast-temperature-min {
+  opacity: 0.7;
 }
